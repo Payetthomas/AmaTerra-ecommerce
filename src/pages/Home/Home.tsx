@@ -1,10 +1,45 @@
+import CardProduct from "../../components/Cards/Card/Card";
 import "./home.scss";
 import { FontAwesomeIcon } from "@fortawesome";
+import he from "../../assets/he-card.png";
+
 
 const Home = () => {
-   return (<div>
-      <p className="Home">Bienvenue sur la page d'accueil du site Ama Terra</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, provident rerum nobis ipsa quia, vitae doloribus unde inventore perferendis illum ullam ab ipsum eligendi laborum corrupti incidunt in delectus voluptas est? Corrupti cupiditate repudiandae, a quibusdam molestiae perferendis nobis laboriosam ut dicta blanditiis? Pariatur ab nostrum a molestias accusantium perspiciatis debitis! Ipsam fugiat, magni adipisci dicta esse obcaecati veniam repudiandae hic, itaque eum minima officiis consequatur harum necessitatibus aspernatur quisquam totam. Iusto blanditiis numquam praesentium soluta sapiente expedita labore officiis, facere aut quod consequatur eligendi maxime sint odit quis in nam consectetur. Deserunt rerum facilis porro incidunt necessitatibus accusantium labore, fuga exercitationem dolorum nemo odit eveniet eius ullam dolor eos debitis velit doloremque eaque sequi delectus laboriosam. Impedit cum dolorum perspiciatis facilis aut odit asperiores quis culpa sapiente a. Temporibus, quisquam vero aut qui illum quas adipisci numquam, sunt, nulla est eligendi nisi facilis nesciunt dolore! Ab blanditiis neque velit quibusdam quam molestiae vitae quod explicabo rem consequatur unde fugit officia odio sunt id error laudantium, quis quasi eum, labore veritatis odit voluptatibus ex. Accusamus sunt ullam optio maxime? Ratione, veniam quia. Optio, itaque temporibus! Corrupti ipsum laborum quasi qui pariatur distinctio officiis deleniti, incidunt eaque sapiente cupiditate nostrum esse perspiciatis, excepturi accusantium, placeat fugiat. Molestias qui velit blanditiis, eaque assumenda at perferendis! Vero voluptate eos voluptatibus, unde est maiores hic officia iusto odit. Ex numquam accusamus veritatis libero. Perspiciatis voluptatem harum ex sint enim sunt commodi minus assumenda, numquam dignissimos modi dolores quibusdam laboriosam. Veniam dolor, soluta laborum quod eum omnis harum. Nemo, recusandae odit dolore quia hic eaque ab quos? Incidunt amet id praesentium eos voluptates obcaecati maxime aspernatur et minima excepturi dolores error, numquam inventore dolore quae sed saepe tempora dignissimos commodi mollitia? Veniam fugiat nam earum hic voluptatum unde illo alias, officiis explicabo enim repellat. Officiis inventore quo adipisci eligendi tempore eaque culpa praesentium voluptatibus commodi vero totam aperiam similique, laudantium optio consequatur odio ab eius repudiandae possimus! Doloremque deserunt voluptatum odit dolorum. Quo, velit. Perspiciatis pariatur aliquam cupiditate eaque fugit laborum dicta officia natus nostrum nesciunt ipsa recusandae, inventore optio esse nam fugiat incidunt temporibus aut, maiores neque. Earum maiores, asperiores explicabo aliquid totam architecto excepturi consequatur ullam nisi alias sequi quidem id, enim harum iusto fuga sed quibusdam consectetur! Sed, corrupti! Obcaecati fuga aperiam at fugit magnam ut quos, quae, saepe quisquam maxime voluptatum, minima dolorem odit reiciendis dicta! Minima, iusto. Officiis eaque magnam nostrum debitis nisi dicta qui non fugit sapiente voluptatum velit, autem, deleniti quod saepe dolorem nulla vel corporis repellat animi, reiciendis officia ex omnis tenetur minima? Odio explicabo et temporibus omnis, repudiandae dolor qui in molestias sapiente, magnam voluptates ullam rem neque quibusdam! Eveniet delectus quasi aut atque mollitia? Voluptatum quae, esse velit dolores commodi repellendus error, iste culpa provident deserunt voluptas labore veniam ex amet aspernatur doloremque hic similique ea, eius ullam aperiam tempore nam. Nobis dolor nihil tempore eius quibusdam porro quidem aut, animi quis, aliquid odio facere earum, sint dolores neque dignissimos maiores molestias nulla. Numquam odit repudiandae cumque officiis, quidem, cupiditate aliquam nihil, nobis eveniet aperiam rerum necessitatibus et maiores explicabo repellendus dicta quaerat voluptate. Suscipit incidunt optio possimus! Ipsum nulla doloribus at et laborum natus, quos ab molestias velit dolor, tenetur non sapiente ipsam officiis corporis corrupti voluptatibus, quod vel reiciendis? Sunt deserunt blanditiis possimus earum nihil facilis vero voluptatibus odit dolorum incidunt obcaecati, magnam neque unde, velit mollitia veniam eos delectus vitae recusandae ipsam voluptates temporibus ipsum quis vel? Quo delectus animi maiores, numquam molestias et? Quasi expedita quis quaerat. Error odit esse voluptate ullam nemo culpa libero vitae quasi? Dolorum eius vero libero quibusdam dicta blanditiis aliquam, laborum debitis quae sequi, nulla enim placeat ab ex optio temporibus illo omnis similique inventore quasi eligendi eos velit. Necessitatibus eveniet, mollitia quas vitae enim temporibus nisi fuga voluptates. Voluptatibus neque saepe rerum eum animi possimus consequuntur voluptate distinctio tempora repellendus repellat, incidunt quo ab mollitia fugit, unde ratione tempore repudiandae reprehenderit! Suscipit doloremque, dignissimos incidunt maiores ex temporibus rerum, sunt velit impedit exercitationem ad. Harum pariatur, consectetur est possimus veritatis, natus aliquam saepe in ab quos vitae qui enim. Quae ex quos eius alias velit quam ad, rem inventore? Sed officia voluptate voluptatem excepturi fuga, veniam praesentium distinctio modi aperiam dolor illum molestiae a alias reiciendis maiores facilis veritatis. Harum a, atque soluta quis dicta unde eveniet debitis perferendis adipisci necessitatibus sit deserunt, iure aliquid. Eius, possimus temporibus veritatis deserunt nulla maxime harum vel soluta impedit quae commodi quisquam, iste reprehenderit voluptate ratione tempora. A nostrum sequi atque eius minima dolore quo, accusantium iure amet numquam, aspernatur repellendus, reprehenderit unde ullam. Non nostrum vero assumenda cupiditate harum odio dicta numquam quos illo in. Accusantium fuga maiores delectus corporis, omnis numquam ad commodi laudantium suscipit rem cum, ipsa error a sit maxime, harum inventore et dolorum tenetur praesentium adipisci necessitatibus facilis. Minima doloribus necessitatibus dolorem hic, dolorum corporis nam blanditiis ad possimus delectus, iure sint quisquam minus? Omnis quae iusto voluptatem ipsa laudantium soluta perspiciatis illo voluptas minus sed, ut sunt eligendi tempore quaerat quidem reprehenderit, magnam blanditiis! Optio illum doloribus ut provident ea expedita minima quo? Accusantium dolorum iure quod dolores amet sequi nihil deleniti, quas suscipit ex aliquid veritatis incidunt quasi voluptas, recusandae delectus quos quam beatae velit blanditiis nam, laboriosam nobis! Eius sed nihil fugiat vel necessitatibus doloribus est expedita nostrum, doloremque perferendis excepturi dignissimos eos possimus inventore omnis nisi. Animi fuga corporis, sit ratione nemo nam veritatis ipsa labore nobis recusandae nisi vero explicabo non veniam qui pariatur laudantium harum id voluptate amet repellendus, eos optio. Recusandae voluptate magnam ab suscipit voluptatem ullam blanditiis, ex, illum quod quasi consequatur! Ullam nihil non quae aliquam recusandae in modi nostrum eveniet? Ea nisi ipsum, aliquam, enim alias hic labore ipsam nam aut quidem et! Et aliquid nulla temporibus mollitia sunt ab reprehenderit nam vero obcaecati optio, doloribus, repellat quisquam veniam. Quo facere dolor iste ullam doloribus voluptas, distinctio, sunt aliquam porro molestiae at ratione cupiditate est quos saepe! Aliquam, distinctio modi. Aliquid, perferendis qui.</p>
+   return (<div className="home-page">
+
+            <div className="home-image"></div>
+
+            <div className="home-content">
+
+               <h2 className="home-content--title">Les nouveautés</h2>
+
+               <div className="home-card">
+
+                  <CardProduct 
+                  title="Huile" 
+                  price={22} 
+                  image={he} 
+                  description="les huiles c'est cool"
+                  />
+               
+                  <CardProduct 
+                  title="Huile" 
+                  price={22} 
+                  image={he} 
+                  description="les huiles c'est cool"
+                  />
+
+                  <CardProduct 
+                  title="Huile" 
+                  price={22} 
+                  image={he} 
+                  description="les huiles c'est cool"
+                  />
+
+               </div>
+            </div>
+
+
       </div>)
 };
 
