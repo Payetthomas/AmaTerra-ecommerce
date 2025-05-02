@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Newsletter.module.scss";
 import axios from "axios";
 
@@ -7,6 +7,17 @@ import axios from "axios";
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState(false); 
+
+  useEffect(() => {
+
+    if (message && !error) {
+      const timer = setTimeout(() => {
+        setMessage("");
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [message, error])
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
