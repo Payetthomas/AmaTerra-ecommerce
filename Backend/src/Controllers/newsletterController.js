@@ -1,4 +1,4 @@
-import { where } from "sequelize";
+import { where, Op, fn } from "sequelize";
 import Newsletter from "../Models/newsletter.js";
 
 export const newsletterController = {
@@ -41,7 +41,27 @@ export const newsletterController = {
             console.error(error);
             res.status(500).json({ message: "Erreur serveur." });
         }
-    }, 
+    },
+    
+    getToday: async (req, res) => {
+
+        try {
+            const emailsToday = await Newsletter.findAll({where: {
+                created_at: {
+                  [Op.gte]: fn("date_trunc", "day", fn("now")),
+                },
+              },
+              order: [["created_at", "DESC"]],
+            });
+            
+            res.status(200).json(emailsToday);
+
+        } catch (error) {
+
+            console.error(error);
+            res.status(500).json({ message: "Erreur serveur." });
+        }
+    },
 
     deleteOne: async (req, res) => {
 

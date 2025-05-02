@@ -5,6 +5,8 @@ export const router = Router();
 
 router.post("/", newsletterController.createOne);
 
-router.get("/", newsletterController.getAll); 
+router.get("/", newsletterController.getAll);
+
+router.get("/today", newsletterController.getToday);
 
 router.delete("/:id", newsletterController.deleteOne); 
