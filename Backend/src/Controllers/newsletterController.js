@@ -1,3 +1,4 @@
+import { where } from "sequelize";
 import Newsletter from "../Models/newsletter.js";
 
 export const newsletterController = {
@@ -25,6 +26,44 @@ export const newsletterController = {
         } catch (error) {
             console.error(error);
             res.status(500).json({ error: "Erreur serveur" });
+        }
+    }, 
+
+    getAll: async (req,res) => {
+
+        try {
+            const emails = await Newsletter.findAll({ order: [["created_at", "DESC"]] }); 
+
+            res.status(200).json(emails);
+
+        } catch (error) {
+            
+            console.error(error);
+            res.status(500).json({ message: "Erreur serveur." });
+        }
+    }, 
+
+    deleteOne: async (req, res) => {
+
+        const emailId = req.params.id; 
+
+        try {
+
+            const deleted = await Newsletter.findByPk(emailId); 
+
+            if(deleted === 0) {
+
+                return res.status(404).json({ message : "Email introuvable"});
+            }
+
+            await deleted.destroy();
+
+            res.status(200).json({message : "Email supprimé avec succés!"}); 
+            
+        } catch (error) {
+            
+            console.error(error);
+            res.status(500).json({ message: "Erreur serveur." });
         }
     }
 }
