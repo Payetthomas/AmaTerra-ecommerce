@@ -21,10 +21,11 @@ export const client = new Sequelize(database, user, password,
     }
 ); 
 
-client.authenticate().then(
-    async () => {
-        console.log(`🚀 database ${database} connected`);
-        await client.query('CREATE EXTENSION IF NOT EXISTS unaccent;')
-    }, 
-    () => console.log(`❌ unable to connect to database ${database}`),
-);
+client.authenticate()
+  .then(async () => {
+    console.log(`🚀 database ${database} connected`);
+  })
+  .catch((err) => {
+    console.error(`❌ unable to connect to database ${database}`);
+    console.error(err.message); // le problème
+  });

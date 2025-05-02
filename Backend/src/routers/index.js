@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { router as newsletterRouter } from "./newsletter"; 
+import { router as newsletterRouter } from "./newsletter.js"; 
 
 export const router = Router();
 
