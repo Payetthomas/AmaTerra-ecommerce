@@ -4,7 +4,9 @@ export const newsletterController = {
 
     createOne: async (req, res) => {
 
-        const {email} = req.body; 
+        const email = req.body.email?.toLowerCase(); 
+
+
 
         if(!email) {
             return res.status(400).json({Error: "email invalide !"});
