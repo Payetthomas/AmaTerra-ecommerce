@@ -29,6 +29,7 @@ const Navbar = () => {
           <div className="hidden md:flex gap-4 ml-6">
             <Link to="/about" onClick={() => setShowSearch(false)} className="text-gray-700 hover:text-blue-600">À propos</Link>
             <Link to="/contact" onClick={() => setShowSearch(false)} className="text-gray-700 hover:text-blue-600">Contact</Link>
+            <Link to="/admin" onClick={() => setShowSearch(false)} className="text-gray-700 hover:text-blue-600">Admin</Link>
           </div>
         </div>
 
