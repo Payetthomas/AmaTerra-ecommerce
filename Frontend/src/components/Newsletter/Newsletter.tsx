@@ -61,7 +61,9 @@ import axios from "axios";
           onChange={(e) => setEmail(e.target.value)}
           className={styles.newsletter__input}
         />
-        <button type="submit" className={styles.newsletter__button} disabled={!email}>
+        <button type="submit" className={`${styles.newsletter__button} ${email.includes("@") ? styles.active : ""}`} 
+        disabled={!email}
+        >
           S'inscrire
         </button>
       </form>

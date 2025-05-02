@@ -48,6 +48,13 @@
       background-color: #74AFA5;
     }
   }
+
+  .active {
+    background-color:#74AFA5;
+    color: white;
+    cursor: pointer;
+    opacity: 1;
+  }
   
   .newsletter__success {
     color: green;

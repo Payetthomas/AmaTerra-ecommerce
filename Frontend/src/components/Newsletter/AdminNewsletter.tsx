@@ -1,14 +1,26 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import styles from "./AdminNewsletter.module.scss"
+import styles from "./AdminNewsletter.module.scss"; 
+
+type TNewsletter = {
+  id: number;
+  email: string;
+  created_at: string;
+};
 
 const AdminNewsletter = () => {
 
     const [emails, setEmails] = useState([]); 
+    const [activeTab, setActiveTab] = useState<"all" | "today">("all");
 
     const fetchEmails = async () => {
 
-        const result = await axios.get("http://localhost:1818/api/newsletter");
+      const route =
+      activeTab === "today"
+        ? "http://localhost:1818/api/newsletter/today"
+        : "http://localhost:1818/api/newsletter";
+
+        const result = await axios.get(route);
         setEmails(result.data); 
     }; 
 
@@ -20,36 +32,62 @@ const AdminNewsletter = () => {
 
     useEffect(() => {
         fetchEmails(); 
-    }, []); 
+    }, [activeTab]); 
 
     return (
-      <table className={styles.newsletterTable}>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Email</th>
-          <th>Date d’inscription</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        {emails.map((entry: any) => (
-          <tr key={entry.id}>
-            <td>{entry.id}</td>
-            <td>{entry.email}</td>
-            <td>{new Date(entry.created_at).toLocaleDateString()}</td>
-            <td>
-              <button
-                className={styles.deleteButton}
-                onClick={() => handleDelete(entry.id)}
-              >
-                🗑️
-              </button>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-)}; 
+      <div className={styles.container}>
+        <h2>Emails newsletter</h2>
+  
+        <div className={styles.tabs}>
+          <button
+            onClick={() => setActiveTab("all")}
+            className={activeTab === "all" ? styles.active : ""}
+          >
+            Tous
+          </button>
+          <button
+            onClick={() => setActiveTab("today")}
+            className={activeTab === "today" ? styles.active : ""}
+          >
+            Aujourd’hui
+          </button>
+        </div>
+  
+        <table className={styles.newsletterTable}>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Email</th>
+              <th>Date d’inscription</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {emails.map((entry: TNewsletter) => (
+              <tr key={entry.id}>
+                <td>{entry.id}</td>
+                <td>{entry.email}</td>
+                <td>
+                  {new Date(entry.created_at).toLocaleDateString("fr-FR", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  })}
+                </td>
+                <td>
+                  <button
+                    className={styles.deleteButton}
+                    onClick={() => handleDelete(entry.id)}
+                  >
+                    🗑️
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  };
 
 export default AdminNewsletter; 
