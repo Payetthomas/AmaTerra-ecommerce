@@ -6,7 +6,7 @@ import OrderItem from "./OrderItems.js";
 import Product from "./Product.js";
 import Supplier from "./Supplier.js";
 import User from "./User.js"; 
-import Newsletter from "./newsletter.js";
+import Newsletter from "./Newsletter.js";
 
 import { client } from "../Data/client.js";
 
@@ -19,8 +19,8 @@ User.hasMany(Favorite, { foreignKey: "utilisateur_id", as: "favorites" });
 Favorite.belongsTo(User, { foreignKey: "utilisateur_id", as: "user" });
 
 // Product → Favorite
-Product.hasMany(Favorite, { foreignKey: "item_id", constraints: false });
-Favorite.belongsTo(Product, { foreignKey: "item_id", constraints: false });
+Product.hasMany(Favorite, { foreignKey: "item_id", constraints: false, scope: {item_type: "product"} });
+Favorite.belongsTo(Product, { foreignKey: "item_id", constraints: false, as: "product" });
 
 // Event → Favorite
 Event.hasMany(Favorite, { foreignKey: "item_id", constraints: false });
