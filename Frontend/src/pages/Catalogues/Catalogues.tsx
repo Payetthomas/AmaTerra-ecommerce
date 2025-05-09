@@ -9,7 +9,7 @@ const Catalogues = () => {
 
     return (
         <main className="container-product">
-             <section className={styles.catalogue}>
+            <section className={styles.catalogue}>
                 <h1 className={styles.title}>Notre Catalogue</h1>
                 <div className={styles.grid}>
                     {data.map((product: TProduct) => (
@@ -19,7 +19,7 @@ const Catalogues = () => {
                     />
                     ))}
                 </div>
-            </section>
+            </section>Ò
         </main>
 
     );

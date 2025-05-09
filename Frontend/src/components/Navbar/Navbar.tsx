@@ -30,6 +30,8 @@ const Navbar = () => {
             <Link to="/about" onClick={() => setShowSearch(false)} className="text-gray-700 hover:text-blue-600">À propos</Link>
             <Link to="/contact" onClick={() => setShowSearch(false)} className="text-gray-700 hover:text-blue-600">Contact</Link>
             <Link to="/admin" onClick={() => setShowSearch(false)} className="text-gray-700 hover:text-blue-600">Admin</Link>
+            <Link to="/admin/ajout-produit" onClick={() => setShowSearch(false)} className="text-gray-700 hover:text-blue-600">AddProduct</Link>
+            <Link to="/admin/stock-produit" onClick={() => setShowSearch(false)} className="text-gray-700 hover:text-blue-600">Stock</Link>
           </div>
         </div>
 

@@ -1,10 +1,28 @@
 import CardProduct from "../../components/Cards/Card/Card";
 import "./home.scss";
 import { FontAwesomeIcon } from "@fortawesome";
-import he from "../../assets/he-card.png";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { TProduct } from "../../@types/cardTypes.ts";
 
 
 const Home = () => {
+
+      const [products, setProducts] = useState<TProduct[]>([]);
+
+      useEffect(() => {
+         const fetchProducts = async () => {
+           try {
+             const res = await axios.get("http://localhost:1818/api/product");
+             setProducts(res.data);
+           } catch (error) {
+             console.error("Erreur de chargement des produits :", error);
+           }
+         };
+     
+         fetchProducts();
+       }, []);
+
    return ( 
          <div className="home-page">
 
@@ -16,53 +34,19 @@ const Home = () => {
 
                <div className="home-card">
 
-                  <CardProduct 
-                  title="Huile" 
-                  price={22} 
-                  image={he} 
-                  description="les huiles c'est cool"
-                  />
-               
-                  <CardProduct 
-                  title="Huile" 
-                  price={22} 
-                  image={he} 
-                  description="les huiles c'est cool"
-                  />
+                  {products.map((product: TProduct) => (
+                     <CardProduct key={product.id} {...product}
+                     />
+                  ))}
 
-                  <CardProduct 
-                  title="Huile" 
-                  price={22} 
-                  image={he} 
-                  description="les huiles c'est cool"
-                  />
-               
+                  
                </div>
 
                <h2 className="home-content--title">Les promotions</h2>
 
                <div className="home-card">
 
-                  <CardProduct 
-                  title="Huile" 
-                  price={22} 
-                  image={he} 
-                  description="les huiles c'est cool"
-                  />
-
-                  <CardProduct 
-                  title="Huile" 
-                  price={22} 
-                  image={he} 
-                  description="les huiles c'est cool"
-                  />
-
-                  <CardProduct 
-                  title="Huile" 
-                  price={22} 
-                  image={he} 
-                  description="les huiles c'est cool"
-                  />
+                 
                </div>
             </div>
 

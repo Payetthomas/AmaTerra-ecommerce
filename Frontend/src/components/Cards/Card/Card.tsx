@@ -3,13 +3,17 @@ import React from "react";
 import styles from "./Card.module.scss";
 import { Link } from "react-router-dom";
 
-import { TProduct } from "../../../@types/cardTypes";
+import { TProduct } from "../../../@types/cardTypes.ts";
 
-export default function CardProduct({id,
+export default function CardProduct({
+  id,
   title,
-  price,
   description,
+  price,
   image,
+  stock,
+  category_id,
+  supplier_id,
   }: TProduct) {
   return (
     <div className={styles.card}>
@@ -17,7 +21,7 @@ export default function CardProduct({id,
       <div className={styles.content}>
         <h2 className={styles.title}>{title}</h2>
         <p className={styles.description}>{description}</p>
-        <p className={styles.price}>{price.toFixed(2)} €</p>
+        <p className={styles.price}>{price} €</p>
           <Link to={`/produits/${id}`} className={styles.button}>
             Découvrir
           </Link>
