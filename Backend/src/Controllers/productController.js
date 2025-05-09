@@ -1,4 +1,4 @@
-import { Product, Category, Supplier } from "../Models/Index.js";
+import { Product, Category, Supplier, Promotion } from "../Models/Index.js";
 import { Sequelize } from "sequelize";
 import { productSchema } from "../Validators/productValidator.js"
 
@@ -24,7 +24,23 @@ export const productController = {
     getAll: async (req, res) => {
 
         try {
-            const products = await Product.findAll();
+            const products = await Product.findAll({
+                include: [
+                    {
+                        model: Category,
+                        as: "category",
+                    }, 
+                    {
+                        model: Supplier,
+                        as: "supplier",
+                    },
+                    {
+                        model: Promotion,
+                        as: "promotion",
+                        attributes:  ["title", "description", "value", "start_date", "end_date"]
+                    }
+                ]
+            });
 
             res.status(200).json(products);
             
@@ -38,7 +54,24 @@ export const productController = {
         const productId = req.params.id;
 
         try {
-            const product = await Product.findByPk(productId);
+            const product = await Product.findByPk(productId, 
+                {
+                    include: [
+                        {
+                            model: Category,
+                            as: "category",
+                        }, 
+                        {
+                            model: Supplier,
+                            as: "supplier",
+                        },
+                        {
+                            model: Promotion,
+                            as: "promotion",
+                            attributes:  ["title", "description", "value", "start_date", "end_date"]
+                        }
+                    ]
+                });
 
             if (!product) {
                 return res.status(404).json( {message: "Produit non trouvé !"} )
@@ -53,7 +86,7 @@ export const productController = {
     
     editOne: async (req, res) => {
 
-        const {error, values} = productSchema.validate(req.body);
+        const {error, value} = productSchema.validate(req.body);
 
         if(error) return res.status(400)
             .json({ message: error.details[0].message });
@@ -67,9 +100,9 @@ export const productController = {
                return res.status(404).json( {message: "Produit non trouvé !"} )
             };
 
-            Object.entries(values).forEach(( [key, value] ) => {
-                if (value !== undefined && value !== null && value !== "") {
-                    product[key] = value;
+            Object.entries(value).forEach(( [key, val] ) => {
+                if (val !== undefined && val !== null && val !== "") {
+                    product[key] = val;
                 }
             });
 

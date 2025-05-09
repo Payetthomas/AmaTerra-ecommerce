@@ -7,6 +7,7 @@ import Product from "./Product.js";
 import Supplier from "./Supplier.js";
 import User from "./User.js"; 
 import Newsletter from "./Newsletter.js";
+import Promotion from "./Promotion.js";
 
 import { client } from "../Data/client.js";
 
@@ -45,6 +46,10 @@ OrderItem.belongsTo(Order, { foreignKey: "order_id", as: "order" });
 Product.hasMany(OrderItem, { foreignKey: "product_id" });
 OrderItem.belongsTo(Product, { foreignKey: "product_id" });
 
+// Product → Promotion
+Product.hasMany(Promotion, {foreignKey: "product_id",as: "promotions"});
+Promotion.belongsTo(Product, {foreignKey: "product_id",as: "product"});
+
 export {
     client,
     Category,
@@ -55,5 +60,6 @@ export {
     OrderItem,
     Product,
     Supplier,
-    User
+    User, 
+    Promotion
 };
