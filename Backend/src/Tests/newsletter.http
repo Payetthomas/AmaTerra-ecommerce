@@ -12,3 +12,17 @@ Content-Type: application/json
 {
     id: 2
 }
+
+### Ajouter un produit
+POST http://localhost:1818/api/product
+Content-Type: application/json
+
+{
+  "title": "Baume à la propolis",
+  "description": "Apaise les irritations de la peau",
+  "price": 15.90,
+  "image": "https://via.placeholder.com/300x300.png?text=Propolis",
+  "stock": 30,
+  "category_id": 3,
+  "supplier_id": 3
+}
