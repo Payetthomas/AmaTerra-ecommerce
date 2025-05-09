@@ -36,7 +36,7 @@ export const productController = {
                     },
                     {
                         model: Promotion,
-                        as: "promotion",
+                        as: "promotions",
                         attributes:  ["title", "description", "value", "start_date", "end_date"]
                     }
                 ]
@@ -67,7 +67,7 @@ export const productController = {
                         },
                         {
                             model: Promotion,
-                            as: "promotion",
+                            as: "promotions",
                             attributes:  ["title", "description", "value", "start_date", "end_date"]
                         }
                     ]
